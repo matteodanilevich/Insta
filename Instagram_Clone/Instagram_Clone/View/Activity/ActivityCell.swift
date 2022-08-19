@@ -30,10 +30,10 @@ struct ActivityCell: View {
 
             Text("Follow")
                 .font(.system(size: 14, weight: .semibold))
-                .frame(width: 100, height: 30)
+                .frame(width: 100, height: 25)
                 .foregroundColor(.white)
                 .background(Color.blue)
-                .cornerRadius(3)
+                .cornerRadius(4)
                 .overlay(
                 RoundedRectangle(cornerRadius: 3)
                     .stroke(Color.gray, lineWidth: 1)
