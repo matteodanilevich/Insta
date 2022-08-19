@@ -27,6 +27,8 @@
 		A26ED53428AE73A900FF2936 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53328AE73A900FF2936 /* ContentView.swift */; };
 		A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53528AE775000FF2936 /* FeedCell.swift */; };
 		A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53828AF953000FF2936 /* PostGridView.swift */; };
+		A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53A28AF97B700FF2936 /* SearchBar.swift */; };
+		A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A26ED53328AE73A900FF2936 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A26ED53528AE775000FF2936 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		A26ED53828AF953000FF2936 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		A26ED53A28AF97B700FF2936 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 		A26ED50D28AE5D1A00FF2936 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A26ED52A28AE724800FF2936 /* SearchView.swift */,
+				A26ED53A28AF97B700FF2936 /* SearchBar.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -296,6 +302,8 @@
 				A26ED52D28AE725400FF2936 /* ProfileView.swift in Sources */,
 				A26ED52728AE722600FF2936 /* ActivityView.swift in Sources */,
 				A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */,
+				A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */,
+				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

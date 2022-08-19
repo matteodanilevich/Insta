@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @State var searchText = ""
+    @State var isSearchMode = false
+    
     var body: some View {
-        Text("Search")
+        SearchBar(searchText: $searchText, isEditing: $isSearchMode)
     }
 }
 
