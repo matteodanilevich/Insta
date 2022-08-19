@@ -62,14 +62,14 @@ struct FeedCell: View {
                 .padding(.bottom, 0.5)
             
             HStack {
-                Text("Corgi").font(.system(size: 14, weight: .semibold)) + Text("Look at this beauty").font(.system(size: 14))
+                Text("Corgi").font(.system(size: 14, weight: .semibold)) + Text(" Look at this beauty").font(.system(size: 14))
             }.padding(.horizontal, 8)
             
-            Text("2 hours ago")
+            Text("2H")
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
                 .padding(.leading, 8)
-                .padding(.top, -2)
+                .padding(.top, -3)
         }
     }
 }
