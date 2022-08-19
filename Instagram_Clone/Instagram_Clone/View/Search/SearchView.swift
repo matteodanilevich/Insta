@@ -13,7 +13,18 @@ struct SearchView: View {
     @State var isSearchMode = false
     
     var body: some View {
-        SearchBar(searchText: $searchText, isEditing: $isSearchMode)
+        ScrollView {
+            SearchBar(searchText: $searchText, isEditing: $isSearchMode)
+                .padding()
+            
+            ZStack{
+                if isSearchMode {
+                    UserListView()
+                } else {
+                    PostGridView()
+                }
+            }
+        }
     }
 }
 

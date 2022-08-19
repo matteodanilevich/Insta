@@ -29,6 +29,8 @@
 		A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53828AF953000FF2936 /* PostGridView.swift */; };
 		A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53A28AF97B700FF2936 /* SearchBar.swift */; };
 		A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */; };
+		A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51828AFBDDB0065FA6D /* UserListView.swift */; };
+		A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51A28AFBE010065FA6D /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		A26ED53828AF953000FF2936 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		A26ED53A28AF97B700FF2936 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		A2A6D51828AFBDDB0065FA6D /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		A2A6D51A28AFBE010065FA6D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +209,18 @@
 			isa = PBXGroup;
 			children = (
 				A26ED53828AF953000FF2936 /* PostGridView.swift */,
+				A2A6D51C28AFBE0A0065FA6D /* User */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		A2A6D51C28AFBE0A0065FA6D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6D51828AFBDDB0065FA6D /* UserListView.swift */,
+				A2A6D51A28AFBE010065FA6D /* UserCell.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,12 +313,14 @@
 				A26ED52928AE723B00FF2936 /* FeedView.swift in Sources */,
 				A26ED4FC28AE5BBD00FF2936 /* Instagram_CloneApp.swift in Sources */,
 				A26ED53228AE734400FF2936 /* PostUploadView.swift in Sources */,
+				A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */,
 				A26ED52D28AE725400FF2936 /* ProfileView.swift in Sources */,
 				A26ED52728AE722600FF2936 /* ActivityView.swift in Sources */,
 				A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */,
 				A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */,
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
+				A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

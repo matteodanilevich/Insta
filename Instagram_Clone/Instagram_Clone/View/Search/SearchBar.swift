@@ -25,6 +25,7 @@ struct SearchBar: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 3)
                 }
             }
             
