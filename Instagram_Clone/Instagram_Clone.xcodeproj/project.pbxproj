@@ -34,6 +34,7 @@
 		A2A6D51E28AFCFF50065FA6D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51D28AFCFF50065FA6D /* ActivityCell.swift */; };
 		A2A6D52028AFD9830065FA6D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51F28AFD9830065FA6D /* ImagePicker.swift */; };
 		A2A6D52328AFDEAF0065FA6D /* PostUploadView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52228AFDEAF0065FA6D /* PostUploadView+Extension.swift */; };
+		A2A6D52528B2095A0065FA6D /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52428B2095A0065FA6D /* TextArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		A2A6D51D28AFCFF50065FA6D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		A2A6D51F28AFD9830065FA6D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A2A6D52228AFDEAF0065FA6D /* PostUploadView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostUploadView+Extension.swift"; sourceTree = "<group>"; };
+		A2A6D52428B2095A0065FA6D /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			children = (
 				A26ED53828AF953000FF2936 /* PostGridView.swift */,
 				A2A6D51C28AFBE0A0065FA6D /* User */,
+				A2A6D52428B2095A0065FA6D /* TextArea.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				A26ED4FC28AE5BBD00FF2936 /* Instagram_CloneApp.swift in Sources */,
 				A26ED53228AE734400FF2936 /* PostUploadView.swift in Sources */,
 				A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */,
+				A2A6D52528B2095A0065FA6D /* TextArea.swift in Sources */,
 				A2A6D51E28AFCFF50065FA6D /* ActivityCell.swift in Sources */,
 				A26ED52D28AE725400FF2936 /* ProfileView.swift in Sources */,
 				A2A6D52328AFDEAF0065FA6D /* PostUploadView+Extension.swift in Sources */,

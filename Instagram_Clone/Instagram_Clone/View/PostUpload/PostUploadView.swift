@@ -39,7 +39,7 @@ struct PostUploadView: View {
                         .frame(width: 100, height: 100)
                         .clipped()
                     
-                    TextField("Enter your caption...", text: $captionText)
+                    TextArea(text: $captionText, placeholder: "Enter you text caption")
                 }
                 .padding()
                 
