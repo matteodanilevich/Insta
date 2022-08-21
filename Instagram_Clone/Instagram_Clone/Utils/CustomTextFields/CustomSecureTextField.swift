@@ -19,7 +19,7 @@ struct CustomSecureTextField: View {
             if text.isEmpty {
                 placeholder
                     .foregroundColor(.black)
-                    .padding(.leading, 40)
+                    .padding(.leading, 52)
             }
             
             HStack {
@@ -28,9 +28,9 @@ struct CustomSecureTextField: View {
                     .scaledToFit()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.black)
-                    .padding(.trailing, 8)
                 
                 SecureField("", text: $text)
+                    .padding(.leading, 8)
             }
             .padding(.horizontal)
         }
