@@ -37,6 +37,10 @@
 		A2A6D52528B2095A0065FA6D /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52428B2095A0065FA6D /* TextArea.swift */; };
 		A2A6D52728B230910065FA6D /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52628B230910065FA6D /* ProfileHeaderView.swift */; };
 		A2A6D52928B231A50065FA6D /* ProfileStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52828B231A50065FA6D /* ProfileStats.swift */; };
+		A2A6D52C28B237EA0065FA6D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52B28B237EA0065FA6D /* RegisterView.swift */; };
+		A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52D28B237F60065FA6D /* SignInView.swift */; };
+		A2A6D53028B239880065FA6D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52F28B239880065FA6D /* CustomTextField.swift */; };
+		A2A6D53228B23B410065FA6D /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		A2A6D52428B2095A0065FA6D /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		A2A6D52628B230910065FA6D /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		A2A6D52828B231A50065FA6D /* ProfileStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStats.swift; sourceTree = "<group>"; };
+		A2A6D52B28B237EA0065FA6D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A2A6D52D28B237F60065FA6D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A2A6D52F28B239880065FA6D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2548BBF28B23C2D003F567E /* CustomTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6D52F28B239880065FA6D /* CustomTextField.swift */,
+				A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */,
+			);
+			path = CustomTextFields;
+			sourceTree = "<group>";
+		};
 		A26ED4EF28AE5BBD00FF2936 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +143,7 @@
 		A26ED50928AE5CCA00FF2936 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2A6D52A28B237B30065FA6D /* Authentifications */,
 				A26ED53728AF951000FF2936 /* Items */,
 				A26ED53028AE732100FF2936 /* PostUpload */,
 				A26ED52528AE71DE00FF2936 /* Activity */,
@@ -156,6 +174,7 @@
 			children = (
 				A2A6D52128AFD98A0065FA6D /* Extensions */,
 				A2A6D51F28AFD9830065FA6D /* ImagePicker.swift */,
+				A2548BBF28B23C2D003F567E /* CustomTextFields */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +268,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A2A6D52A28B237B30065FA6D /* Authentifications */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6D52B28B237EA0065FA6D /* RegisterView.swift */,
+				A2A6D52D28B237F60065FA6D /* SignInView.swift */,
+			);
+			path = Authentifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +364,12 @@
 				A26ED52B28AE724800FF2936 /* SearchView.swift in Sources */,
 				A26ED52F28AE726600FF2936 /* MainView.swift in Sources */,
 				A26ED53428AE73A900FF2936 /* ContentView.swift in Sources */,
+				A2A6D52C28B237EA0065FA6D /* RegisterView.swift in Sources */,
+				A2A6D53028B239880065FA6D /* CustomTextField.swift in Sources */,
 				A26ED52928AE723B00FF2936 /* FeedView.swift in Sources */,
 				A26ED4FC28AE5BBD00FF2936 /* Instagram_CloneApp.swift in Sources */,
 				A2A6D52928B231A50065FA6D /* ProfileStats.swift in Sources */,
+				A2A6D53228B23B410065FA6D /* CustomSecureTextField.swift in Sources */,
 				A26ED53228AE734400FF2936 /* PostUploadView.swift in Sources */,
 				A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */,
 				A2A6D52528B2095A0065FA6D /* TextArea.swift in Sources */,
@@ -352,6 +383,7 @@
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
 				A2A6D52028AFD9830065FA6D /* ImagePicker.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
+				A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */,
 				A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
