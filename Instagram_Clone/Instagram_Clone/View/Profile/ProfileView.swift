@@ -12,9 +12,11 @@ struct ProfileView: View {
         ScrollView {
             VStack(spacing: 32) {
                 ProfileHeaderView()
-                    .padding()
+                    .padding(.vertical)
+//                    .padding()
                 
                 PostGridView()
+                    .padding(.horizontal, 8)
             }
             .padding(.top)
         }
