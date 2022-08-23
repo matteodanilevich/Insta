@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostUploadView: View {
 
-    @State var selectedImage: UIImage?
+    @State private(set) var selectedImage: UIImage?
     @State var postedImage: Image?
     @State var imagePickerRepresented = false
     @State var captionText = ""
@@ -48,9 +48,10 @@ struct PostUploadView: View {
                 } label: {
                     Text("Share")
                         .font(.system(size: 16, weight: .semibold))
-                        .frame(width: 350, height: 50)
+                        .frame(width: 350, height: 40)
                         .background(Color.blue)
-                        .cornerRadius(6)
+//                        .cornerRadius(6)
+                        .clipShape(Capsule())
                         .foregroundColor(.white)
                     
                 }
