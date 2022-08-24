@@ -17,7 +17,9 @@ struct ContentView: View {
             if viewModel.userSession == nil {
                 SignInView()
             } else {
-                MainView(selectedIndex: $selectedIndex)
+                if let user = viewModel.currentUser {
+                    MainView(user: user, selectedIndex: $selectedIndex)
+                }
             }
         }
     }

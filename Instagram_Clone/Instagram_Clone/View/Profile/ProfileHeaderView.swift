@@ -13,12 +13,13 @@ struct ProfileHeaderView: View {
     @State var selectedImage: UIImage?
     @State var userImage: Image?
     @State var imagePickerRepresent = false
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 ZStack {
-                    if let imageURL = AuthentificationViewModel.shared.currentUser?.profileImageURL {
+                    if let imageURL = viewModel.user.profileImageURL {
                         KFImage(URL(string: imageURL))
                             .resizable()
                             .scaledToFill()
@@ -54,7 +55,7 @@ struct ProfileHeaderView: View {
                 .padding(.trailing, 32)
             }
             
-            Text(AuthentificationViewModel.shared.currentUser?.fullname ?? "")
+            Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .bold))
                 .padding([.leading, .top])
         }

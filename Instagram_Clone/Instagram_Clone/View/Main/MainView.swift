@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
+    let user: User
+    
     @Binding var selectedIndex: Int
     
     var tabTitle: String {
@@ -68,7 +70,7 @@ struct MainView: View {
                     .tabItem {
                         Image(systemName: "suit.heart")
                     }.tag(3)
-                ProfileView()
+                ProfileView(user: user)
                     .onTapGesture {
                         selectedIndex = 4
                     }
