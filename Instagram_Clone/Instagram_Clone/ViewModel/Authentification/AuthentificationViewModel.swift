@@ -14,6 +14,10 @@ class AuthentificationViewModel: ObservableObject {
     
     static let shared = AuthentificationViewModel()
     
+    init() {
+        userSession = Auth.auth().currentUser
+    }
+    
     func register(withEmail email: String, username: String, fullname: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
