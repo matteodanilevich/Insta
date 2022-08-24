@@ -28,6 +28,15 @@ struct MainView: View {
         }
     }
 
+    var logOutButton: some View {
+        Button {
+            AuthentificationViewModel.shared.logOut()
+        } label: {
+            Text("Log Out")
+                .foregroundColor(.black)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             TabView(selection: $selectedIndex) {
@@ -68,6 +77,7 @@ struct MainView: View {
                     }.tag(4)
             }
             .navigationTitle(tabTitle)
+            .navigationBarItems(trailing: logOutButton)
             .accentColor(.black)
         }
     }
