@@ -10,13 +10,14 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AuthentificationViewModel
+    @State var selectedIndex = 0
     
     var body: some View {
         Group {
             if viewModel.userSession == nil {
                 SignInView()
             } else {
-                MainView()
+                MainView(selectedIndex: $selectedIndex)
             }
         }
     }
