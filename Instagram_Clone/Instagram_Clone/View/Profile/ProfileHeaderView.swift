@@ -6,17 +6,43 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
+    
+    @State var selectedImage: UIImage?
+    @State var userImage: Image?
+    @State var imagePickerRepresent = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("corgi")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .padding(.leading, 16)
+                ZStack {
+                    if let imageURL = AuthentificationViewModel.shared.currentUser?.profileImageURL {
+                        KFImage(URL(string: imageURL))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                            .padding(.leading, 16)
+                    } else {
+                        Button {
+                            self.imagePickerRepresent.toggle()
+                        } label: {
+                            Image("placeholder_image")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .padding(.leading, 16)
+                        }
+                        .sheet(isPresented: $imagePickerRepresent) {
+                            loadImage()
+                        } content: {
+                            ImagePicker(image: $selectedImage)
+                        }
+                    }
+                }
                 
                 Spacer()
                 
@@ -32,11 +58,5 @@ struct ProfileHeaderView: View {
                 .font(.system(size: 15, weight: .bold))
                 .padding([.leading, .top])
         }
-    }
-}
-
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView()
     }
 }
