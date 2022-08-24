@@ -11,11 +11,13 @@ import Firebase
 class AuthentificationViewModel: ObservableObject {
     
     @Published var userSession: Firebase.User?
+    @Published var currentUser: User?
     
     static let shared = AuthentificationViewModel()
     
     init() {
         userSession = Auth.auth().currentUser
+        userFetch()
     }
     
     func register(withEmail email: String, username: String, fullname: String, password: String) {
@@ -32,11 +34,14 @@ class AuthentificationViewModel: ObservableObject {
                         "fullname": fullname,
                         "uid": user.uid]
             
-            Firestore.firestore().collection("users").document(user.uid).setData(data) { error in
+            Firestore.firestore().collection("users").document(user.uid).setData(data) { [self] error in
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
+                
+                self.userSession = user
+                userFetch()
                 
                 print("User created")
             }
@@ -44,7 +49,7 @@ class AuthentificationViewModel: ObservableObject {
     }
     
     func signIn(withEmail email: String, passowrd: String) {
-        Auth.auth().signIn(withEmail: email, password: passowrd) { result, error in
+        Auth.auth().signIn(withEmail: email, password: passowrd) { [self] result, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -53,11 +58,27 @@ class AuthentificationViewModel: ObservableObject {
             guard let user = result?.user else { return }
             
             self.userSession = user
+            userFetch()
         }
     }
     
     func logOut() {
         self.userSession = nil
         try? Auth.auth().signOut()
+    }
+    
+    func userFetch() {
+        
+        guard let uid = userSession?.uid else { return }
+        
+        Firestore.firestore().collection("users").document(uid).getDocument { snap, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let user = try? snap?.data(as: User.self) else { return }
+            self.currentUser = user
+        }
     }
 }

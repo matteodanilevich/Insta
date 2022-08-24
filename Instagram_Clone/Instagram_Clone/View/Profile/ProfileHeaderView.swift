@@ -27,6 +27,10 @@ struct ProfileHeaderView: View {
                 }
                 .padding(.trailing, 32)
             }
+            
+            Text(AuthentificationViewModel.shared.currentUser?.fullname ?? "")
+                .font(.system(size: 15, weight: .bold))
+                .padding([.leading, .top])
         }
     }
 }
