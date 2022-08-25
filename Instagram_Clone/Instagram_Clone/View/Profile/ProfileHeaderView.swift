@@ -6,17 +6,54 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
+    
+    @State var selectedImage: UIImage?
+    @State var userImage: Image? = Image("placeholder_image")
+    @State var imagePickerRepresent = false
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("corgi")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .padding(.leading, 16)
+                ZStack {
+                    if let imageURL = viewModel.user.profileImageURL {
+                        Button {
+                            self.imagePickerRepresent.toggle()
+                        } label: {
+                            KFImage(URL(string: imageURL))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .padding(.leading, 16)
+                        }
+                        .sheet(isPresented: $imagePickerRepresent) {
+                            loadImage()
+                        } content: {
+                            ImagePicker(image: $selectedImage)
+                        }
+                    } else {
+                        Button {
+                            self.imagePickerRepresent.toggle()
+                        } label: {
+                            userImage?
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .padding(.leading, 16)
+                        }
+                        .sheet(isPresented: $imagePickerRepresent) {
+                            loadImage()
+                        } content: {
+                            ImagePicker(image: $selectedImage)
+                        }
+                    }
+                }
+                .padding(.horizontal)
                 
                 Spacer()
                 
@@ -27,12 +64,18 @@ struct ProfileHeaderView: View {
                 }
                 .padding(.trailing, 32)
             }
+            
+            Text(viewModel.user.fullname)
+                .font(.system(size: 15, weight: .bold))
+                .padding([.leading, .top])
+                .padding(.leading, 20)
+            
+            HStack {
+                Spacer()
+                ProfileViewButtonEdit(viewModel: viewModel)
+                Spacer()
+            }
+            .padding(.top)
         }
-    }
-}
-
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView()
     }
 }

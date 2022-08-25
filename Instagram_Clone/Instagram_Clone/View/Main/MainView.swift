@@ -9,34 +9,78 @@ import SwiftUI
 
 struct MainView: View {
     
-    var body: some View {
-        TabView {
-            FeedView()
-                .tabItem {
-                    Image(systemName: "house")
-                }
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-            PostUploadView()
-                .tabItem {
-                    Image(systemName: "plus.app")
-                }
-            ActivityView()
-                .tabItem {
-                    Image(systemName: "suit.heart")
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle")
-                }
+    let user: User
+    
+    @Binding var selectedIndex: Int
+    
+    var tabTitle: String {
+        switch selectedIndex {
+        case 0:
+            return "Feed"
+        case 1:
+            return "Search"
+        case 2:
+            return "Upload"
+        case 3:
+            return "Activity"
+        case 4:
+            return "Profile"
+        default:
+            return ""
         }
     }
-}
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
+    var logOutButton: some View {
+        Button {
+            AuthentificationViewModel.shared.logOut()
+        } label: {
+            Text("Log Out")
+                .foregroundColor(.black)
+        }
+    }
+    
+    var body: some View {
+        NavigationView {
+            TabView(selection: $selectedIndex) {
+                FeedView()
+                    .onTapGesture {
+                        selectedIndex = 0
+                    }
+                    .tabItem {
+                        Image(systemName: "house")
+                    }.tag(0)
+                SearchView()
+                    .onTapGesture {
+                        selectedIndex = 1
+                    }
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                    }.tag(1)
+                PostUploadView()
+                    .onTapGesture {
+                        selectedIndex = 2
+                    }
+                    .tabItem {
+                        Image(systemName: "plus.app")
+                    }.tag(2)
+                ActivityView()
+                    .onTapGesture {
+                        selectedIndex = 3
+                    }
+                    .tabItem {
+                        Image(systemName: "suit.heart")
+                    }.tag(3)
+                ProfileView(user: user)
+                    .onTapGesture {
+                        selectedIndex = 4
+                    }
+                    .tabItem {
+                        Image(systemName: "person.crop.circle")
+                    }.tag(4)
+            }
+            .navigationTitle(tabTitle)
+            .navigationBarItems(trailing: logOutButton)
+            .accentColor(.black)
+        }
     }
 }

@@ -11,8 +11,10 @@ struct RegisterView: View {
     
     @State var email = ""
     @State var password = ""
-    @State var usermane = ""
+    @State var username = ""
     @State var fullName = ""
+    
+    @EnvironmentObject var viewModel: AuthentificationViewModel
     
     var body: some View {
         NavigationView {
@@ -29,7 +31,7 @@ struct RegisterView: View {
                         .padding()
                         .padding(.horizontal, 32)
                     
-                    CustomTextField(text: $usermane, placeholder: Text("Username"), imageName: "person.circle")
+                    CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person.circle")
                         .padding()
                         .padding(.horizontal, 32)
                     
@@ -43,7 +45,7 @@ struct RegisterView: View {
                 }
                 
                 Button {
-                    
+                    viewModel.register(withEmail: email, username: username, fullname: fullName, password: password)
                 } label: {
                     Text("Register")
                         .font(.headline)
