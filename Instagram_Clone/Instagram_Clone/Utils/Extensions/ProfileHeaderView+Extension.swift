@@ -11,6 +11,7 @@ extension ProfileHeaderView {
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         
+        userImage = Image(uiImage: selectedImage)
         viewModel.loadNewProfileImage(image: selectedImage) { _ in
             print("Image Upload")
         }
