@@ -45,7 +45,8 @@ struct PostUploadView: View {
                 .padding()
                 
                 Button {
-                    viewModel.uploadPosts(image: selectedImage!, caption: captionText)
+                    guard let selectedImage = selectedImage else { return }
+                    viewModel.uploadPosts(image: selectedImage, caption: captionText)
                     
                     captionText = ""
                     postedImage = nil
