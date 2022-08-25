@@ -18,31 +18,14 @@ class ProfileViewModel: ObservableObject {
     }
 
     func loadNewProfileImage(image: UIImage, completion: @escaping(String) -> Void) {
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
-
-        let fileName = NSUUID().uuidString
-        let reference = Storage.storage().reference(withPath: "/profile_images/\(fileName)")
-
-        reference.putData(imageData, metadata: nil) { _, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-
-            reference.downloadURL { url, error in
+        
+        guard let uid = user.id else { return }
+        
+        ImageUploader.imageUpload(image: image, type: .profile) { imageURL in
+            Firestore.firestore().collection("users").document(uid).updateData(["profileImageURL": imageURL]) { error in
                 if let error = error {
                     print(error.localizedDescription)
                     return
-                }
-                
-                guard let imageURL = url?.absoluteString else { return }
-                
-                guard let uid = self.user.id else { return }
-                Firestore.firestore().collection("users").document(uid).updateData(["profileImageURL": imageURL]) { error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
                 }
             }
         }
