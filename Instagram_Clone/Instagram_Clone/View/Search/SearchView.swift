@@ -22,7 +22,7 @@ struct SearchView: View {
                 if isSearchMode {
                     UserListView(viewModel: viewModel, seachName: $searchText)
                 } else {
-                    PostGridView()
+                    PostGridView(type: .search)
                 }
             }
         }

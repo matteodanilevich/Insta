@@ -18,8 +18,12 @@ struct ProfileView: View {
                     .padding(.vertical)
 //                    .padding()
                 
-                PostGridView()
-                    .padding(.horizontal, 8)
+                if let currentUserID = user.id {
+                    PostGridView(type: .profile(currentUserID))
+                        .padding(.horizontal, 12)
+                }
+//                PostGridView(type: .profile(user.id))
+//                    .padding(.horizontal, 8)
             }
             .padding(.top)
         }
