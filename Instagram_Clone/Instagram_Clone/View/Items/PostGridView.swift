@@ -31,6 +31,5 @@ struct PostGridView: View {
                     .clipped()
             }
         }
-//        .padding(.horizontal)
     }
 }
