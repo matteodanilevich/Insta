@@ -10,23 +10,32 @@ import Kingfisher
 
 struct FeedCell: View {
     
-    let post: Post
+    @ObservedObject var viewModel: FeedCellViewModel
+    
+    init(viewModel: FeedCellViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                KFImage(URL(string: post.ownerImageURL))
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 36, height: 36)
-                    .clipped()
-                    .cornerRadius(18)
-                Text(post.ownerUsername)
-                    .font(.system(size: 14, weight: .semibold))
+            if let user = viewModel.post.user {
+                NavigationLink(destination: ProfileView(user: user)) {
+                    HStack {
+                        KFImage(URL(string: viewModel.post.ownerImageURL))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 36, height: 36)
+                            .clipped()
+                            .cornerRadius(18)
+                        Text(viewModel.post.ownerUsername)
+                            .font(.system(size: 14, weight: .semibold))
+                    }
+                    .padding([.leading, .bottom], 8)
+                }
             }
-            .padding([.leading, .bottom], 8)
+
             
-            KFImage(URL(string: post.imageURL))
+            KFImage(URL(string: viewModel.post.imageURL))
                 .resizable()
                 .scaledToFill()
                 .frame(maxHeight: 390)
@@ -66,7 +75,7 @@ struct FeedCell: View {
                 .padding(.bottom, 0.5)
             
             HStack {
-                Text(post.ownerUsername).font(.system(size: 14, weight: .semibold)) + Text(" \(post.caption)").font(.system(size: 14))
+                Text(viewModel.post.ownerUsername).font(.system(size: 14, weight: .semibold)) + Text(" \(viewModel.post.caption)").font(.system(size: 14))
             }.padding(.horizontal, 8)
             
             Text("2H")
