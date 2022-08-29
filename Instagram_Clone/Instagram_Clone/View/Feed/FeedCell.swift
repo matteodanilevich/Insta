@@ -46,7 +46,7 @@ struct FeedCell: View {
             
             HStack(spacing: 16) {
                 Button {
-                    viewModel.likePost()
+                    didLikePost ? viewModel.unlikePost() : viewModel.likePost()
                 } label: {
                     Image(systemName: didLikePost ? "suit.heart.fill" : "suit.heart")
                         .resizable()

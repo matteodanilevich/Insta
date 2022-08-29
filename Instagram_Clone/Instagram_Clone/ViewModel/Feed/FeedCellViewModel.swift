@@ -30,7 +30,7 @@ class FeedCellViewModel: ObservableObject {
     }
     
     func likePost() {
-        guard let postUID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid  else { return }
+        guard let postUID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
         
         Firestore.firestore().collection("posts").document(postUID).collection("post_likes").document(userID).setData([ : ]) { error in
             if let error = error {
@@ -74,5 +74,24 @@ class FeedCellViewModel: ObservableObject {
     
     func unlikePost() {
         
+        guard post.likes > 0 else { return }
+        guard let postUID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
+        
+        Firestore.firestore().collection("posts").document(postUID).collection("post_likes").document(userID).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+        }
+        
+        Firestore.firestore().collection("users").document(userID).collection("user_likes").document(postUID).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            self.post.didLikePost = false
+            self.post.likes -= 1
+        }
     }
 }
