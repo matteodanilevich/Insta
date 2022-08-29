@@ -11,6 +11,9 @@ import Kingfisher
 struct FeedCell: View {
     
     @ObservedObject var viewModel: FeedCellViewModel
+    var didLikePost: Bool {
+        return viewModel.post.didLikePost ?? false
+    }
     
     init(viewModel: FeedCellViewModel) {
         self.viewModel = viewModel
@@ -42,13 +45,17 @@ struct FeedCell: View {
                 .clipped()
             
             HStack(spacing: 16) {
-                Image(systemName: "suit.heart")
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(.black)
-                    .frame(width: 20, height: 20)
-                    .font(.system(size: 20))
-                    .padding(3)
+                Button {
+                    viewModel.likePost()
+                } label: {
+                    Image(systemName: didLikePost ? "suit.heart.fill" : "suit.heart")
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundColor(didLikePost ? .red : .black)
+                        .frame(width: 20, height: 20)
+                        .font(.system(size: 20))
+                        .padding(3)
+                }
                 
                 Image(systemName: "bubble.right")
                     .resizable()
@@ -69,7 +76,7 @@ struct FeedCell: View {
             .padding(.leading, 4)
             .foregroundColor(.black)
             
-            Text("15 likes")
+            Text("\(viewModel.post.likes) likes")
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 0.5)
