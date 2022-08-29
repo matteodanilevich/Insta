@@ -15,6 +15,7 @@ class FeedCellViewModel: ObservableObject {
     init(post: Post) {
         self.post = post
         userFetching()
+        checkingPostLikes()
     }
     
     func userFetching() {
@@ -53,6 +54,21 @@ class FeedCellViewModel: ObservableObject {
                     self.post.didLikePost = true
                 }
             }
+        }
+    }
+    
+    func checkingPostLikes() {
+        guard let postID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
+        
+        Firestore.firestore().collection("posts").document(postID).collection("post_likes").document(userID).getDocument { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let didLike = snapshot?.exists else { return }
+            
+            self.post.didLikePost = didLike
         }
     }
     
