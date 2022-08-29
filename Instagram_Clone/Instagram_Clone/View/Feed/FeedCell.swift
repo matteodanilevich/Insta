@@ -76,7 +76,7 @@ struct FeedCell: View {
             .padding(.leading, 4)
             .foregroundColor(.black)
             
-            Text("\(viewModel.post.likes) likes")
+            Text(viewModel.likeText)
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 0.5)
@@ -85,7 +85,7 @@ struct FeedCell: View {
                 Text(viewModel.post.ownerUsername).font(.system(size: 14, weight: .semibold)) + Text(" \(viewModel.post.caption)").font(.system(size: 14))
             }.padding(.horizontal, 8)
             
-            Text("2H")
+            Text(viewModel.timestamp)
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
                 .padding(.leading, 8)

@@ -12,6 +12,20 @@ class FeedCellViewModel: ObservableObject {
     
     @Published var post: Post
     
+    var timestamp: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day]
+//        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: post.timestamp.dateValue(), to: Date()) ?? ""
+    }
+    
+    var likeText: String {
+        let label = post.likes == 1 ? "like" : "likes"
+        return "\(post.likes) \(label)"
+    }
+    
     init(post: Post) {
         self.post = post
         userFetching()
@@ -94,4 +108,6 @@ class FeedCellViewModel: ObservableObject {
             self.post.likes -= 1
         }
     }
+    
+    
 }
