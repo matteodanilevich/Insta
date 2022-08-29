@@ -27,6 +27,8 @@ class ProfileViewModel: ObservableObject {
                     print(error.localizedDescription)
                     return
                 }
+                
+                self.user.profileImageURL = imageURL
             }
         }
     }

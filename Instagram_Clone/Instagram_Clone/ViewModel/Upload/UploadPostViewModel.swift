@@ -23,7 +23,6 @@ class UploadPostViewModel: ObservableObject {
                         "likes": 0,
                         "imageURL": imageURL,
                         "ownerUID": uid,
-                        "ownerImageURL": user.profileImageURL,
                         "ownerUsername": user.username] as [String : Any]
             Firestore.firestore().collection("posts").addDocument(data: data) { error in
                 if let error = error {

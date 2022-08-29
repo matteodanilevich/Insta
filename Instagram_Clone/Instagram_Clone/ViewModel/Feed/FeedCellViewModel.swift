@@ -40,6 +40,9 @@ class FeedCellViewModel: ObservableObject {
             }
             
             self.post.user = try? snapshot?.data(as: User.self)
+            
+            guard let userImageURL = self.post.user?.profileImageURL else { return }
+            self.post.ownerImageURL = userImageURL
         }
     }
     

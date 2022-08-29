@@ -24,12 +24,21 @@ struct FeedCell: View {
             if let user = viewModel.post.user {
                 NavigationLink(destination: ProfileView(user: user)) {
                     HStack {
-                        KFImage(URL(string: viewModel.post.ownerImageURL))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 36, height: 36)
-                            .clipped()
-                            .cornerRadius(18)
+                        if let imageURL = viewModel.post.ownerImageURL {
+                            KFImage(URL(string: imageURL))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 36, height: 36)
+                                .clipped()
+                                .cornerRadius(18)
+                        } else {
+                            Image("placeholder_image")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 36, height: 36)
+                                .clipped()
+                                .cornerRadius(18)
+                        }
                         Text(viewModel.post.ownerUsername)
                             .font(.system(size: 14, weight: .semibold))
                     }
