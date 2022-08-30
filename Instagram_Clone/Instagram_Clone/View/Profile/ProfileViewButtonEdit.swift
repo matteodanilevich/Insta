@@ -28,7 +28,9 @@ struct ProfileViewButtonEdit: View {
         } else {
             HStack(spacing: 16) {
                 Button {
-                    
+                    if let userID = viewModel.user.id {
+                        viewModel.followUser(uid: userID)
+                    }
                 } label: {
                     Text("Follow")
                         .font(.system(size: 14, weight: .semibold))
