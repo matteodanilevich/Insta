@@ -64,15 +64,10 @@ class ProfileViewModel: ObservableObject {
     
     func checkFollowing() {
         
-        guard let userID = user.id, let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
+        guard let userID = user.id, !user.isCurrentUser else { return }
         
-        Firestore.firestore().collection("following").document(currentUID).collection("user_following").document(userID).getDocument { snapshot, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let didFollow = snapshot?.exists else { return }
+        UserAction.checkFollowing(userID: userID) { didFollow in
+            self.user.didFollowUser = didFollow
         }
     }
 }
