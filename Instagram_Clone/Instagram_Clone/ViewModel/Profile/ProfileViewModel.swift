@@ -15,6 +15,7 @@ class ProfileViewModel: ObservableObject {
 
     init(user: User) {
         self.user = user
+        checkFollowing()
     }
 
     func loadNewProfileImage(image: UIImage, completion: @escaping(String) -> Void) {
@@ -42,6 +43,8 @@ class ProfileViewModel: ObservableObject {
                 print(error.localizedDescription)
                 return
             }
+            
+            self.user.didFollowUser = true
         }
     }
     
@@ -54,6 +57,22 @@ class ProfileViewModel: ObservableObject {
                 print(error.localizedDescription)
                 return
             }
+        }
+        
+        self.user.didFollowUser = false
+    }
+    
+    func checkFollowing() {
+        
+        guard let userID = user.id, let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
+        
+        Firestore.firestore().collection("following").document(currentUID).collection("user_following").document(userID).getDocument { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let didFollow = snapshot?.exists else { return }
         }
     }
 }
