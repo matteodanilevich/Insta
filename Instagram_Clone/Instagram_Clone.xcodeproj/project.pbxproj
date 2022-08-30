@@ -55,6 +55,7 @@
 		A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52D28B237F60065FA6D /* SignInView.swift */; };
 		A2A6D53028B239880065FA6D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52F28B239880065FA6D /* CustomTextField.swift */; };
 		A2A6D53228B23B410065FA6D /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */; };
+		A2F7EE2828BE440400B8E9B2 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2728BE440400B8E9B2 /* UserAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		A2A6D52D28B237F60065FA6D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A2A6D52F28B239880065FA6D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
+		A2F7EE2728BE440400B8E9B2 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				A2548BD728B76F27003F567E /* ImageUploader.swift */,
+				A2F7EE2728BE440400B8E9B2 /* UserAction.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				A2548BC128B2D206003F567E /* ForgotPasswordView.swift in Sources */,
 				A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */,
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
+				A2F7EE2828BE440400B8E9B2 /* UserAction.swift in Sources */,
 				A2A6D52028AFD9830065FA6D /* ImagePicker.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
 				A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */,

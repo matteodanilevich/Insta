@@ -33,22 +33,22 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func followUser(uid: String) {
-        
-        guard let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
-        
-        Firestore.firestore().collection("following").document(currentUID).collection("user_following").document(uid).setData([ : ]) { error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            Firestore.firestore().collection("followers").document(uid).collection("user_followers").document(currentUID).setData([ : ]) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-            }
-        }
-    }
+//    func followUser(uid: String) {
+//
+//        guard let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
+//
+//        Firestore.firestore().collection("following").document(currentUID).collection("user_following").document(uid).setData([ : ]) { error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//
+//            Firestore.firestore().collection("followers").document(uid).collection("user_followers").document(currentUID).setData([ : ]) { error in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//            }
+//        }
+//    }
 }
