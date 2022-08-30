@@ -48,8 +48,8 @@ class AuthentificationViewModel: ObservableObject {
         }
     }
     
-    func signIn(withEmail email: String, passowrd: String) {
-        Auth.auth().signIn(withEmail: email, password: passowrd) { [self] result, error in
+    func signIn(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [self] result, error in
             if let error = error {
                 print(error.localizedDescription)
                 return

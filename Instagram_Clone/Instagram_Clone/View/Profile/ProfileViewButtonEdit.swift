@@ -35,6 +35,7 @@ struct ProfileViewButtonEdit: View {
                         .frame(width: 172, height: 32)
                         .foregroundColor(.white)
                         .background(Color.blue)
+                        .cornerRadius(3)
                 }
                 
                 Button {
@@ -42,7 +43,7 @@ struct ProfileViewButtonEdit: View {
                 } label: {
                     Text("Message")
                         .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 172, height: 36)
+                        .frame(width: 172, height: 32)
                         .foregroundColor(.black)
                         .overlay(
                         RoundedRectangle(cornerRadius: 3)

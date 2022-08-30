@@ -15,11 +15,10 @@ struct ProfileView: View {
         ScrollView {
             VStack(spacing: 32) {
                 ProfileHeaderView(viewModel: ProfileViewModel(user: user))
-                    .padding(.vertical)
-//                    .padding()
                 
-                PostGridView()
-                    .padding(.horizontal, 8)
+                if let currentUserID = user.id {
+                    PostGridView(type: .profile(currentUserID))
+                }
             }
             .padding(.top)
         }

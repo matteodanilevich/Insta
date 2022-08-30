@@ -53,16 +53,12 @@ struct ProfileHeaderView: View {
                         }
                     }
                 }
-                .padding(.horizontal)
-                
-                Spacer()
                 
                 HStack(spacing: 16) {
                     ProfileStats(value: 5, title: "Posts")
                     ProfileStats(value: 15, title: "Followers")
                     ProfileStats(value: 30, title: "Following")
                 }
-                .padding(.trailing, 32)
             }
             
             Text(viewModel.user.fullname)
