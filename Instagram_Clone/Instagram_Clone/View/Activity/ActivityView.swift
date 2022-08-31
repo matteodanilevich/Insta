@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ActivityView: View {
+    
+    @ObservedObject var viewModel = NotificationViewModel()
+    
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0..<10) {_ in
-                    ActivityCell()
+                ForEach(viewModel.notifications) { notification in
+                    ActivityCell(notification: notification)
                         .padding(.top)
                 }
             }

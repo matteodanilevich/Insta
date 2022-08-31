@@ -67,6 +67,8 @@ class FeedCellViewModel: ObservableObject {
                         return
                     }
                     
+                    NotificationViewModel.sendNotification(withUID: self.post.ownerUID, type: .like, post: self.post)
+                    
                     self.post.likes += 1
                     self.post.didLikePost = true
                 }

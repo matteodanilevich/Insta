@@ -9,6 +9,28 @@ import SwiftUI
 import Firebase
 
 class NotificationViewModel: ObservableObject {
+    
+    @Published var notifications = [Notification]()
+    
+    init() {
+        notificationFetch()
+    }
+    
+    func notificationFetch() {
+        
+        guard let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
+        
+        Firestore.firestore().collection("notifications").document(userID).collection("user_notifications").order(by: "timestamp", descending: true).getDocuments { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else { return }
+            
+            self.notifications = documents.compactMap({ try? $0.data(as: Notification.self) })
+        }
+    }
 
     static func sendNotification(withUID uid: String, type: NotificationType, post: Post? = nil) {
 

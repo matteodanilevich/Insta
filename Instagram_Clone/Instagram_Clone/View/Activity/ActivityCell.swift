@@ -6,17 +6,29 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ActivityCell: View {
+    
+    let notification: Notification
+    
     var body: some View {
         HStack {
-            Image("corgi")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
+            if let imageURL = notification.profileImageURL {
+                KFImage(URL(string: imageURL))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+            } else {
+                Image("placeholder_image")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+            }
 
-            Text("corgi")
+            Text(notification.username)
                 .font(.system(size: 14, weight: .semibold))
             +
             Text(" has followed you profile")
@@ -43,8 +55,8 @@ struct ActivityCell: View {
     }
 }
 
-struct ActivityCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityCell()
-    }
-}
+//struct ActivityCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ActivityCell()
+//    }
+//}
