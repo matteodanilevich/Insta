@@ -55,9 +55,9 @@ struct ProfileHeaderView: View {
                 }
                 
                 HStack(spacing: 16) {
-                    ProfileStats(value: 5, title: "Posts")
-                    ProfileStats(value: 15, title: "Followers")
-                    ProfileStats(value: 30, title: "Following")
+                    ProfileStats(value: viewModel.user.stats?.posts ?? 0, title: "Posts")
+                    ProfileStats(value: viewModel.user.stats?.followers ?? 0, title: "Followers")
+                    ProfileStats(value: viewModel.user.stats?.following ?? 0, title: "Following")
                 }
             }
             

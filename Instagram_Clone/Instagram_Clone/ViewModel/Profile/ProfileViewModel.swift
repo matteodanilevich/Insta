@@ -16,6 +16,7 @@ class ProfileViewModel: ObservableObject {
     init(user: User) {
         self.user = user
         checkFollowing()
+        checkStats()
     }
 
     func loadNewProfileImage(image: UIImage, completion: @escaping(String) -> Void) {
@@ -68,6 +69,40 @@ class ProfileViewModel: ObservableObject {
         
         UserAction.checkFollowing(userID: userID) { didFollow in
             self.user.didFollowUser = didFollow
+        }
+    }
+    
+    func checkStats() {
+        
+        guard let userID = user.id else { return }
+        
+        Firestore.firestore().collection("followers").document(userID).collection("user_followers").getDocuments { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let followers = snapshot?.documents.count else { return }
+            
+            Firestore.firestore().collection("following").document(userID).collection("user_following").getDocuments { snapshot, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                guard let following = snapshot?.documents.count else { return }
+                
+                Firestore.firestore().collection("posts").whereField("ownerUID", isEqualTo: userID).getDocuments { snapshot, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let posts = snapshot?.documents.count else { return }
+                    
+                    self.user.stats = UserStats(following: following, followers: followers, posts: posts)
+                }
+            }
         }
     }
 }

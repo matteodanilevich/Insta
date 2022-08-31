@@ -56,6 +56,7 @@
 		A2A6D53028B239880065FA6D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D52F28B239880065FA6D /* CustomTextField.swift */; };
 		A2A6D53228B23B410065FA6D /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */; };
 		A2F7EE2828BE440400B8E9B2 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2728BE440400B8E9B2 /* UserAction.swift */; };
+		A2F7EE2A28BF85CC00B8E9B2 /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		A2A6D52F28B239880065FA6D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A2A6D53128B23B410065FA6D /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 		A2F7EE2728BE440400B8E9B2 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
+		A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			children = (
 				A2548BCD28B67DAA003F567E /* User.swift */,
 				A2548BD928B7909C003F567E /* Post.swift */,
+				A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2548BD428B75D22003F567E /* ProfileViewButtonEdit.swift in Sources */,
+				A2F7EE2A28BF85CC00B8E9B2 /* UserStats.swift in Sources */,
 				A2548BDE28BA6B56003F567E /* SearchViewModel.swift in Sources */,
 				A26ED52B28AE724800FF2936 /* SearchView.swift in Sources */,
 				A26ED52F28AE726600FF2936 /* MainView.swift in Sources */,
