@@ -45,6 +45,7 @@ class ProfileViewModel: ObservableObject {
                 return
             }
             
+            NotificationViewModel.sendNotification(withUID: userID, type: .follow)
             self.user.didFollowUser = true
         }
     }
