@@ -15,7 +15,7 @@ struct ActivityView: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.notifications) { notification in
-                    ActivityCell(notification: notification)
+                    ActivityCell(viewModel: NotificationCellViewModel(notification: notification))
                         .padding(.top)
                 }
             }

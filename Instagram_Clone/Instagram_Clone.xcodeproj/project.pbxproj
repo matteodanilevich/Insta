@@ -59,6 +59,7 @@
 		A2F7EE2A28BF85CC00B8E9B2 /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */; };
 		A2F7EE2D28BFB1F800B8E9B2 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2C28BFB1F800B8E9B2 /* NotificationViewModel.swift */; };
 		A2F7EE2F28BFB24700B8E9B2 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE2E28BFB24700B8E9B2 /* Notification.swift */; };
+		A2F7EE3128C0A75E00B8E9B2 /* NotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3028C0A75E00B8E9B2 /* NotificationCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 		A2F7EE2C28BFB1F800B8E9B2 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		A2F7EE2E28BFB24700B8E9B2 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		A2F7EE3028C0A75E00B8E9B2 /* NotificationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F7EE2C28BFB1F800B8E9B2 /* NotificationViewModel.swift */,
+				A2F7EE3028C0A75E00B8E9B2 /* NotificationCellViewModel.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A26ED53228AE734400FF2936 /* PostUploadView.swift in Sources */,
 				A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */,
 				A2548BDC28B791A4003F567E /* FeedViewModel.swift in Sources */,
+				A2F7EE3128C0A75E00B8E9B2 /* NotificationCellViewModel.swift in Sources */,
 				A2A6D52528B2095A0065FA6D /* TextArea.swift in Sources */,
 				A2A6D51E28AFCFF50065FA6D /* ActivityCell.swift in Sources */,
 				A2548BE328BBD8B3003F567E /* FeedCellViewModel.swift in Sources */,
