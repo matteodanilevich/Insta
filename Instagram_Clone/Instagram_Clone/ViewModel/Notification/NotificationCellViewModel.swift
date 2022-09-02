@@ -15,6 +15,8 @@ class NotificationCellViewModel: ObservableObject {
     init(notification: Notification) {
         self.notification = notification
         userFetch()
+        postFetch()
+        checkFollowing()
     }
     
     var timestamp: String {
@@ -36,6 +38,18 @@ class NotificationCellViewModel: ObservableObject {
         }
     }
     
+    func postFetch() {
+        guard let postID = notification.postID else {return }
+        
+        Firestore.firestore().collection("posts").document(postID).getDocument { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            self.notification.post = try? snapshot?.data(as: Post.self)
+        }
+    }
     
     func followUser() {
         
