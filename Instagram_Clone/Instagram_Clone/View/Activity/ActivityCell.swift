@@ -68,15 +68,17 @@ struct ActivityCell: View {
                 .cornerRadius(3)
             } else {
                 if let post = viewModel.notification.post {
-                    KFImage(URL(string: post.imageURL))
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 40)
-                        .clipped()
+                    NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post))) {
+                        KFImage(URL(string: post.imageURL))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                    }
                 }
             }
         }
-            .padding(.horizontal)
+        .padding(.horizontal)
     }
 }
 

@@ -36,6 +36,7 @@ class NotificationCellViewModel: ObservableObject {
         }
     }
     
+    
     func followUser() {
         
         UserAction.followUser(uid: notification.uid) { error in
