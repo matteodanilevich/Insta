@@ -12,6 +12,10 @@ struct ActivityCell: View {
     
     @ObservedObject var viewModel: NotificationCellViewModel
     
+    var didFollowUser: Bool {
+        return viewModel.notification.didFollowUser ?? false
+    }
+    
     init(viewModel: NotificationCellViewModel) {
         self.viewModel = viewModel
     }
@@ -49,16 +53,19 @@ struct ActivityCell: View {
             Spacer()
 
             if viewModel.notification.type == .follow {
-                Text("Follow")
-                    .font(.system(size: 14, weight: .semibold))
-                    .frame(width: 100, height: 25)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(4)
-                    .overlay(
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
+                Button {
+                    didFollowUser ? viewModel.unfollowUser() : viewModel.followUser()
+                } label: {
+                    Text(didFollowUser ? "Following" : "Follow")
+                        .font(.system(size: 14, weight: .semibold))
+                        .frame(width: 100, height: 32)
+                        .foregroundColor(didFollowUser ? .black : .white)
+                        .background(didFollowUser ? Color.white : Color.blue)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: didFollowUser ? 1 : 0))
+                }
+                .cornerRadius(3)
             } else {
                 if let post = viewModel.notification.post {
                     KFImage(URL(string: post.imageURL))

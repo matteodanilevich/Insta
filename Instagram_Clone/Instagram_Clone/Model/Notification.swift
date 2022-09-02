@@ -39,4 +39,6 @@ struct Notification: Decodable, Identifiable {
     
     var post: Post?
     var user: User?
+    
+    var didFollowUser: Bool? = false
 }
