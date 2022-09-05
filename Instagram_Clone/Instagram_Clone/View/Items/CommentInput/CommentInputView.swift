@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CommentInputView: View {
     
-    @Binding var inputText: String
+    @Binding var comment: String
     var action: () -> Void
     
     var body: some View {
@@ -20,7 +20,7 @@ struct CommentInputView: View {
                 .foregroundColor(Color(.separator))
                 
             HStack {
-                TextField("Comment...", text: $inputText)
+                TextField("Comment...", text: $comment)
                     .textFieldStyle(PlainTextFieldStyle())
                     .frame(minHeight: 30)
                 

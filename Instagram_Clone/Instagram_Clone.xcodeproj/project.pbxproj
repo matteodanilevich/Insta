@@ -63,6 +63,7 @@
 		A2F7EE3428C6041B00B8E9B2 /* CommentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3328C6041B00B8E9B2 /* CommentCellView.swift */; };
 		A2F7EE3628C6042700B8E9B2 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3528C6042700B8E9B2 /* CommentView.swift */; };
 		A2F7EE3828C6072A00B8E9B2 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3728C6072A00B8E9B2 /* CommentInputView.swift */; };
+		A2F7EE3C28C6614600B8E9B2 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3B28C6614600B8E9B2 /* CommentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		A2F7EE3328C6041B00B8E9B2 /* CommentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellView.swift; sourceTree = "<group>"; };
 		A2F7EE3528C6042700B8E9B2 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2F7EE3728C6072A00B8E9B2 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		A2F7EE3B28C6614600B8E9B2 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		A2548BC528B61127003F567E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A2F7EE3A28C6613100B8E9B2 /* Comment */,
 				A2F7EE2B28BFB1DE00B8E9B2 /* Notification */,
 				A2548BDF28BA9FE5003F567E /* Grid */,
 				A2548BCA28B61176003F567E /* Profile */,
@@ -415,6 +418,14 @@
 			path = CommentInput;
 			sourceTree = "<group>";
 		};
+		A2F7EE3A28C6613100B8E9B2 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				A2F7EE3B28C6614600B8E9B2 /* CommentsViewModel.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,6 +551,7 @@
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
 				A2F7EE2828BE440400B8E9B2 /* UserAction.swift in Sources */,
 				A2A6D52028AFD9830065FA6D /* ImagePicker.swift in Sources */,
+				A2F7EE3C28C6614600B8E9B2 /* CommentsViewModel.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
 				A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */,
 				A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */,
