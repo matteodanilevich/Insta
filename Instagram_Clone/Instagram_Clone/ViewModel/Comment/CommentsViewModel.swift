@@ -10,6 +10,7 @@ import Firebase
 
 class CommentsViewModel: ObservableObject {
     
+    @Published var comments = []
     let post: Post
     
     init(post: Post) {

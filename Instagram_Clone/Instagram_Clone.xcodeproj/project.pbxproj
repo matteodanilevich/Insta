@@ -64,6 +64,7 @@
 		A2F7EE3628C6042700B8E9B2 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3528C6042700B8E9B2 /* CommentView.swift */; };
 		A2F7EE3828C6072A00B8E9B2 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3728C6072A00B8E9B2 /* CommentInputView.swift */; };
 		A2F7EE3C28C6614600B8E9B2 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3B28C6614600B8E9B2 /* CommentsViewModel.swift */; };
+		A2F7EE3E28C6679300B8E9B2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7EE3D28C6679300B8E9B2 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		A2F7EE3528C6042700B8E9B2 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2F7EE3728C6072A00B8E9B2 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		A2F7EE3B28C6614600B8E9B2 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		A2F7EE3D28C6679300B8E9B2 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				A2548BD928B7909C003F567E /* Post.swift */,
 				A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */,
 				A2F7EE2E28BFB24700B8E9B2 /* Notification.swift */,
+				A2F7EE3D28C6679300B8E9B2 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2548BD428B75D22003F567E /* ProfileViewButtonEdit.swift in Sources */,
+				A2F7EE3E28C6679300B8E9B2 /* Comment.swift in Sources */,
 				A2F7EE2D28BFB1F800B8E9B2 /* NotificationViewModel.swift in Sources */,
 				A2F7EE2A28BF85CC00B8E9B2 /* UserStats.swift in Sources */,
 				A2548BDE28BA6B56003F567E /* SearchViewModel.swift in Sources */,
