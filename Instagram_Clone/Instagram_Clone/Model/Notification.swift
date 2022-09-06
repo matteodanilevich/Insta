@@ -26,7 +26,7 @@ enum NotificationType: Int, Decodable {
     }
 }
 
-struct Notification: Decodable, Identifiable {
+struct Notification: Identifiable, Decodable {
     
     @DocumentID var id: String?
     

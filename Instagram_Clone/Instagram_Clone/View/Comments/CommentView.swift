@@ -20,8 +20,8 @@ struct CommentView: View {
         VStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 18) {
-                    ForEach(0..<10) { _ in
-                        CommentCellView()
+                    ForEach(viewModel.comments) { comment in
+                        CommentCellView(comment: comment)
                     }
                 }
             }
@@ -31,7 +31,7 @@ struct CommentView: View {
     
     func uploadComment() {
         viewModel.commentUpload(comment: comment)
-        comment = ""
+        self.comment = ""
     }
 }
 //
