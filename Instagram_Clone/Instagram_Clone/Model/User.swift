@@ -22,4 +22,5 @@ struct User: Decodable, Identifiable {
     }
     
     var didFollowUser: Bool? = false
+    var bio: String?
 }
