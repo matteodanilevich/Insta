@@ -43,7 +43,8 @@ class CommentsViewModel: ObservableObject {
         
         guard let postID = post.id else { return }
         
-        Firestore.firestore().collection("posts").document(postID).collection("post_comments").order(by: "timestamp", descending: true).addSnapshotListener { snapshot, error in
+        //Изменение сортировки 
+        Firestore.firestore().collection("posts").document(postID).collection("post_comments").order(by: "timestamp", descending: false).addSnapshotListener { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return

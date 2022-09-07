@@ -18,10 +18,17 @@ struct MessageChatView: View {
     
     var body: some View {
         VStack {
-            MessageInputView(message: $message, action: messageSend)
-                .onAppear{
-                    print(viewModel.messages)
+            ScrollViewReader { scroll in
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.messages) { message in
+                            MessageRowView(message: message)
+                        }
+                    }
                 }
+            }
+            
+            MessageInputView(message: $message, action: messageSend)
         }
     }
     

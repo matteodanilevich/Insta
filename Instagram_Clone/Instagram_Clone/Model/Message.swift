@@ -18,4 +18,12 @@ struct Message: Identifiable, Decodable {
     let profileImageURL: String?
     let message: String
     let timestamp: Timestamp
+    
+    var timestampText: String? {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: timestamp.dateValue(), to: Date()) ?? ""
+    }
 }
