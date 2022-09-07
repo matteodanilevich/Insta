@@ -10,6 +10,8 @@
 		A2524F8C28C89ED00006EE36 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F8B28C89ED00006EE36 /* LazyView.swift */; };
 		A2524F9028C8A2E20006EE36 /* MessageChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F8F28C8A2E20006EE36 /* MessageChatView.swift */; };
 		A2524F9228C8A3090006EE36 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F9128C8A3090006EE36 /* MessageInputView.swift */; };
+		A2524F9428C8B9700006EE36 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F9328C8B9700006EE36 /* MessageViewModel.swift */; };
+		A2524F9628C8BF960006EE36 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F9528C8BF960006EE36 /* Message.swift */; };
 		A2548BC128B2D206003F567E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2548BC028B2D206003F567E /* ForgotPasswordView.swift */; };
 		A2548BC328B3C42B003F567E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2548BC228B3C42B003F567E /* GoogleService-Info.plist */; };
 		A2548BCC28B6119C003F567E /* AuthentificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2548BCB28B6119C003F567E /* AuthentificationViewModel.swift */; };
@@ -74,6 +76,8 @@
 		A2524F8B28C89ED00006EE36 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		A2524F8F28C8A2E20006EE36 /* MessageChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageChatView.swift; sourceTree = "<group>"; };
 		A2524F9128C8A3090006EE36 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
+		A2524F9328C8B9700006EE36 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		A2524F9528C8BF960006EE36 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A2548BC028B2D206003F567E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A2548BC228B3C42B003F567E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2548BCB28B6119C003F567E /* AuthentificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		A2524F8D28C8A2B00006EE36 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				A2524F9328C8B9700006EE36 /* MessageViewModel.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				A2F7EE2928BF85CC00B8E9B2 /* UserStats.swift */,
 				A2F7EE2E28BFB24700B8E9B2 /* Notification.swift */,
 				A2F7EE3D28C6679300B8E9B2 /* Comment.swift */,
+				A2524F9528C8BF960006EE36 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				A26ED52B28AE724800FF2936 /* SearchView.swift in Sources */,
 				A26ED52F28AE726600FF2936 /* MainView.swift in Sources */,
 				A2F7EE3428C6041B00B8E9B2 /* CommentCellView.swift in Sources */,
+				A2524F9628C8BF960006EE36 /* Message.swift in Sources */,
 				A2F7EE3828C6072A00B8E9B2 /* CommentInputView.swift in Sources */,
 				A2548BD228B6A6FF003F567E /* ProfileViewModel.swift in Sources */,
 				A26ED53428AE73A900FF2936 /* ContentView.swift in Sources */,
@@ -582,6 +589,7 @@
 				A2F7EE2F28BFB24700B8E9B2 /* Notification.swift in Sources */,
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
 				A2F7EE2828BE440400B8E9B2 /* UserAction.swift in Sources */,
+				A2524F9428C8B9700006EE36 /* MessageViewModel.swift in Sources */,
 				A2A6D52028AFD9830065FA6D /* ImagePicker.swift in Sources */,
 				A2F7EE3C28C6614600B8E9B2 /* CommentsViewModel.swift in Sources */,
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,

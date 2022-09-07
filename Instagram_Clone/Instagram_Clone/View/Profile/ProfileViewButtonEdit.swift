@@ -45,14 +45,16 @@ struct ProfileViewButtonEdit: View {
                 }
                 .cornerRadius(3)
                 
-                NavigationLink(destination: MessageChatView()) {
-                    Text("Message")
-                        .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 172, height: 32)
-                        .foregroundColor(.black)
-                        .overlay(
-                        RoundedRectangle(cornerRadius: 3)
-                            .stroke(Color.gray, lineWidth: 1))
+                if let userID = viewModel.user.id {
+                    NavigationLink(destination: MessageChatView(userID: userID)) {
+                        Text("Message")
+                            .font(.system(size: 14, weight: .semibold))
+                            .frame(width: 172, height: 32)
+                            .foregroundColor(.black)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: 1))
+                    }
                 }
             }
         }

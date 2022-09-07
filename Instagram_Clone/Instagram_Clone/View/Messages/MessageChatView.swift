@@ -10,14 +10,24 @@ import SwiftUI
 struct MessageChatView: View {
     
     @State var message = ""
+    @ObservedObject var viewModel: MessageViewModel
+    
+    init(userID: String) {
+        self.viewModel = MessageViewModel(userID: userID)
+    }
     
     var body: some View {
         VStack {
             MessageInputView(message: $message, action: messageSend)
+                .onAppear{
+                    print(viewModel.messages)
+                }
         }
     }
     
     func messageSend() {
+        viewModel.messageSend(message: message)
+        message = ""
         print("Message send")
     }
 }
