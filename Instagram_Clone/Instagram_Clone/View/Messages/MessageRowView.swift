@@ -20,15 +20,23 @@ struct MessageRowView: View {
             if !yourAccount {
                 if let profileImage = message.profileImageURL {
                     KFImage(URL(string: profileImage))
-                        .frame(width: 50, height: 50)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
                         .clipped()
                         .clipShape(Circle())
                 } else {
                     Image("placeholder_image")
-                        .frame(width: 50, height: 50)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
                         .clipped()
                         .clipShape(Circle())
                 }
+            }
+            
+            if yourAccount {
+                Spacer(minLength: 0)
             }
             
             VStack(alignment: yourAccount ? .trailing : .leading, spacing: 5) {
@@ -44,7 +52,30 @@ struct MessageRowView: View {
                     .foregroundColor(.gray)
                     .padding(yourAccount ? .trailing : .leading, 10)
             }
+            
+            if !yourAccount {
+                Spacer(minLength: 0)
+            }
+            
+            if yourAccount {
+                if let profileImage = message.profileImageURL {
+                    KFImage(URL(string: profileImage))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .clipShape(Circle())
+                } else {
+                    Image("placeholder_image")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .clipShape(Circle())
+                }
+            }
         }
+        .padding(6)
     }
 }
 
