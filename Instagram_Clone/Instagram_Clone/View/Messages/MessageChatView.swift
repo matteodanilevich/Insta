@@ -10,6 +10,7 @@ import SwiftUI
 struct MessageChatView: View {
     
     @State var message = ""
+    @State var scrolled = false
     @ObservedObject var viewModel: MessageViewModel
     
     init(userID: String) {
@@ -18,11 +19,20 @@ struct MessageChatView: View {
     
     var body: some View {
         VStack {
-            ScrollViewReader { scroll in
+            ScrollViewReader { scrollReader in
                 ScrollView {
                     LazyVStack {
                         ForEach(viewModel.messages) { message in
                             MessageRowView(message: message)
+                                .onAppear {
+                                    if message.id == self.viewModel.messages.last?.id && !scrolled {
+                                        scrollReader.scrollTo(viewModel.messages.last?.id, anchor: .bottom)
+                                        scrolled = true
+                                    }
+                                }
+                        }
+                        .onChange(of: viewModel.messages) { _ in
+                            scrollReader.scrollTo(viewModel.messages.last?.id, anchor: .bottom)
                         }
                     }
                 }
