@@ -10,11 +10,12 @@ import Firebase
 
 class CommentsViewModel: ObservableObject {
     
-    @Published var comments = []
+    @Published var comments = [Comment]()
     let post: Post
     
     init(post: Post) {
         self.post = post
+        commentFetch()
     }
     
     func commentUpload(comment: String) {
@@ -35,6 +36,22 @@ class CommentsViewModel: ObservableObject {
             }
             
             NotificationViewModel.sendNotification(withUID: self.post.ownerUID, type: .comment, post: self.post)
+        }
+    }
+    
+    func commentFetch() {
+        
+        guard let postID = post.id else { return }
+        
+        Firestore.firestore().collection("posts").document(postID).collection("post_comments").order(by: "timestamp", descending: true).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let documentChange = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
+            
+            self.comments.append(contentsOf: documentChange.compactMap({ try? $0.document.data(as: Comment.self) }))
         }
     }
 }

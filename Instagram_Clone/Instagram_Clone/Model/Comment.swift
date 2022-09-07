@@ -12,9 +12,19 @@ import FirebaseFirestoreSwift
 struct Comment: Identifiable, Decodable {
     
     @DocumentID var id: String?
-    let ownerUID: String
+    
+    let uid: String
+    let postOwnerId: String
     let username: String
-    let ownerImageURL: String
+    let profileImageURL: String?
     let comment: String
     let timestamp: Timestamp
+    
+    var timestampText: String? {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: timestamp.dateValue(), to: Date()) ?? ""
+    }
 }
