@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2524F8C28C89ED00006EE36 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2524F8B28C89ED00006EE36 /* LazyView.swift */; };
 		A2548BC128B2D206003F567E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2548BC028B2D206003F567E /* ForgotPasswordView.swift */; };
 		A2548BC328B3C42B003F567E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2548BC228B3C42B003F567E /* GoogleService-Info.plist */; };
 		A2548BCC28B6119C003F567E /* AuthentificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2548BCB28B6119C003F567E /* AuthentificationViewModel.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2524F8B28C89ED00006EE36 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		A2548BC028B2D206003F567E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A2548BC228B3C42B003F567E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2548BCB28B6119C003F567E /* AuthentificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewModel.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				A2A6D51C28AFBE0A0065FA6D /* User */,
 				A2A6D52428B2095A0065FA6D /* TextArea.swift */,
 				A2F7EE3928C6073400B8E9B2 /* CommentInput */,
+				A2524F8B28C89ED00006EE36 /* LazyView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				A26ED52728AE722600FF2936 /* ActivityView.swift in Sources */,
 				A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */,
 				A2548BC128B2D206003F567E /* ForgotPasswordView.swift in Sources */,
+				A2524F8C28C89ED00006EE36 /* LazyView.swift in Sources */,
 				A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */,
 				A2F7EE2F28BFB24700B8E9B2 /* Notification.swift in Sources */,
 				A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */,
