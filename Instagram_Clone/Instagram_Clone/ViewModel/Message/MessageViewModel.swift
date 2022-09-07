@@ -47,7 +47,7 @@ class MessageViewModel: ObservableObject {
         
         guard let currentUserID = AuthentificationViewModel.shared.userSession?.uid else { return }
         
-        Firestore.firestore().collection("messages").document(currentUserID).collection("user_messages").document(currentUserProfileID).collection("messages").addSnapshotListener { snapshot, error in
+        Firestore.firestore().collection("messages").document(currentUserID).collection("user_messages").document(currentUserProfileID).collection("messages").order(by: "timestamp", descending: false).addSnapshotListener { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
