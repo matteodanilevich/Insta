@@ -45,9 +45,7 @@ struct ProfileViewButtonEdit: View {
                 }
                 .cornerRadius(3)
                 
-                Button {
-                    
-                } label: {
+                NavigationLink(destination: MessageChatView()) {
                     Text("Message")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 172, height: 32)
@@ -56,7 +54,6 @@ struct ProfileViewButtonEdit: View {
                         RoundedRectangle(cornerRadius: 3)
                             .stroke(Color.gray, lineWidth: 1))
                 }
-
             }
         }
     }

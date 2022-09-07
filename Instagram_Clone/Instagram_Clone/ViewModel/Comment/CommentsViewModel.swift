@@ -51,6 +51,8 @@ class CommentsViewModel: ObservableObject {
             
             guard let documentChange = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
             
+//            print(documentChange.compactMap({ try? $0.document.data(as: Comment.self)}))
+            
             self.comments.append(contentsOf: documentChange.compactMap({ try? $0.document.data(as: Comment.self) }))
         }
     }
