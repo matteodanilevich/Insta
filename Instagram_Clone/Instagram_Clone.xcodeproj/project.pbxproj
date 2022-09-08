@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22D894A28CA303100408ADC /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22D894928CA303100408ADC /* LaunchView.swift */; };
 		A232AE4A28C8CBFC00DA6496 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232AE4928C8CBFC00DA6496 /* MessageRowView.swift */; };
 		A232AE4C28C8D21C00DA6496 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232AE4B28C8D21C00DA6496 /* MessageBubbleView.swift */; };
 		A232AE4E28C8F22900DA6496 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232AE4D28C8F22900DA6496 /* ProfileEditView.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22D894928CA303100408ADC /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		A232AE4928C8CBFC00DA6496 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		A232AE4B28C8D21C00DA6496 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		A232AE4D28C8F22900DA6496 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A22D894628CA2B9E00408ADC /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A22D894928CA303100408ADC /* LaunchView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		A2524F8D28C8A2B00006EE36 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +303,7 @@
 		A26ED50928AE5CCA00FF2936 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A22D894628CA2B9E00408ADC /* LaunchScreen */,
 				A2524F8E28C8A2BD0006EE36 /* Messages */,
 				A2F7EE3228C603C600B8E9B2 /* Comments */,
 				A2A6D52A28B237B30065FA6D /* Authentifications */,
@@ -564,6 +575,7 @@
 				A2F7EE2A28BF85CC00B8E9B2 /* UserStats.swift in Sources */,
 				A2548BDE28BA6B56003F567E /* SearchViewModel.swift in Sources */,
 				A26ED52B28AE724800FF2936 /* SearchView.swift in Sources */,
+				A22D894A28CA303100408ADC /* LaunchView.swift in Sources */,
 				A26ED52F28AE726600FF2936 /* MainView.swift in Sources */,
 				A2F7EE3428C6041B00B8E9B2 /* CommentCellView.swift in Sources */,
 				A2524F9628C8BF960006EE36 /* Message.swift in Sources */,

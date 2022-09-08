@@ -11,13 +11,25 @@ import Firebase
 @main
 struct Instagram_CloneApp: App {
     
+    @State private var showLaunchView: Bool = true
+    
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(AuthentificationViewModel.shared)
+            ZStack {
+                ContentView().environmentObject(AuthentificationViewModel.shared)
+                
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLauchView: $showLaunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(1.5)
+            }
         }
     }
 }
