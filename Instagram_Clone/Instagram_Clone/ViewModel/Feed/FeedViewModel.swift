@@ -19,7 +19,7 @@ class FeedViewModel: ObservableObject {
     
     func fetchPosts() {
         
-        Firestore.firestore().collection("posts").getDocuments { snapshot, error in
+        Firestore.firestore().collection("posts").order(by: "timestamp", descending: true).getDocuments { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return

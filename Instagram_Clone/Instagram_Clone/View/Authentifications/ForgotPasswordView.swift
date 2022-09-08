@@ -40,10 +40,9 @@ struct ForgotPasswordView: View {
                         Text("Go back")
                             .font(.system(size: 13, weight: .semibold))
                             .foregroundColor(.gray)
-                            .padding(.top)
+                            .padding(.top, -10)
                             .padding(.trailing, 16)
                     }
-
                 }
                 
                 Button {

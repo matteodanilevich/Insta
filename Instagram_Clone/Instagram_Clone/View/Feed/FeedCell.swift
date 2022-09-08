@@ -50,7 +50,7 @@ struct FeedCell: View {
             KFImage(URL(string: viewModel.post.imageURL))
                 .resizable()
                 .scaledToFill()
-                .frame(maxHeight: 390)
+                .frame(maxHeight: 440)
                 .clipped()
             
             HStack(spacing: 16) {
@@ -102,7 +102,7 @@ struct FeedCell: View {
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
                 .padding(.leading, 8)
-                .padding(.top, -3)
+                .padding(.top, -2)
         }
     }
 }

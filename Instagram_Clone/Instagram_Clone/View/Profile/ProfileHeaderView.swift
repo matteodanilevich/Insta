@@ -64,7 +64,7 @@ struct ProfileHeaderView: View {
             Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .bold))
                 .padding([.leading, .top])
-                .padding(.leading, 8)
+                .padding(.leading, 6)
             
             if let bio = viewModel.user.bio {
                 Text(bio)

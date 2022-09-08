@@ -39,7 +39,7 @@ struct ProfileViewButtonEdit: View {
                 } label: {
                     Text(didFollowUser ? "Following" : "Follow")
                         .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 172, height: 32)
+                        .frame(width: 170, height: 32)
                         .foregroundColor(didFollowUser ? .black : .white)
                         .background(didFollowUser ? Color.white : Color.blue)
                         .overlay(
@@ -52,7 +52,7 @@ struct ProfileViewButtonEdit: View {
                     NavigationLink(destination: MessageChatView(userID: userID)) {
                         Text("Message")
                             .font(.system(size: 14, weight: .semibold))
-                            .frame(width: 172, height: 32)
+                            .frame(width: 170, height: 32)
                             .foregroundColor(.black)
                             .overlay(
                             RoundedRectangle(cornerRadius: 3)
