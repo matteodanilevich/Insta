@@ -13,7 +13,7 @@ extension ProfileHeaderView {
         
         userImage = Image(uiImage: selectedImage)
         viewModel.loadNewProfileImage(image: selectedImage) { _ in
-            print("Image Upload")
+            print("DEBUG: Image Upload")
         }
     }
 }

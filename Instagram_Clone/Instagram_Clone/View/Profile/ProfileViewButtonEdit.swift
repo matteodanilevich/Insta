@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileViewButtonEdit: View {
     
     @ObservedObject var viewModel: ProfileViewModel
+    @State var showProfileEdit = false
     
     var didFollowUser: Bool {
         return viewModel.user.didFollowUser ?? false
@@ -19,7 +20,7 @@ struct ProfileViewButtonEdit: View {
         
         if viewModel.user.isCurrentUser {
             Button {
-                
+                self.showProfileEdit.toggle()
             } label: {
                     Text("Edit Profile")
                     .font(.system(size: 14, weight: .semibold))
@@ -28,6 +29,8 @@ struct ProfileViewButtonEdit: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 3)
                             .stroke(Color.gray, lineWidth: 1))
+            }.sheet(isPresented: $showProfileEdit) {
+                ProfileEditView(user: $viewModel.user)
             }
         } else {
             HStack(spacing: 16) {
@@ -36,7 +39,7 @@ struct ProfileViewButtonEdit: View {
                 } label: {
                     Text(didFollowUser ? "Following" : "Follow")
                         .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 172, height: 32)
+                        .frame(width: 170, height: 32)
                         .foregroundColor(didFollowUser ? .black : .white)
                         .background(didFollowUser ? Color.white : Color.blue)
                         .overlay(
@@ -45,18 +48,17 @@ struct ProfileViewButtonEdit: View {
                 }
                 .cornerRadius(3)
                 
-                Button {
-                    
-                } label: {
-                    Text("Message")
-                        .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 172, height: 32)
-                        .foregroundColor(.black)
-                        .overlay(
-                        RoundedRectangle(cornerRadius: 3)
-                            .stroke(Color.gray, lineWidth: 1))
+                if let userID = viewModel.user.id {
+                    NavigationLink(destination: MessageChatView(userID: userID)) {
+                        Text("Message")
+                            .font(.system(size: 14, weight: .semibold))
+                            .frame(width: 170, height: 32)
+                            .foregroundColor(.black)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: 1))
+                    }
                 }
-
             }
         }
     }

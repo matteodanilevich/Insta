@@ -17,11 +17,11 @@ enum NotificationType: Int, Decodable {
     var notificationMessage: String {
         switch self {
         case .follow:
-            return " start following you profile"
+            return "start following you"
         case .comment:
-            return " commented one of your post"
+            return "commented your post"
         case .like:
-            return " liked one of your post"
+            return "liked your post"
         }
     }
 }

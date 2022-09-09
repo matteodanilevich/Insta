@@ -30,10 +30,10 @@ struct UserCell: View {
                     .clipShape(Circle())
             }
             
-            VStack {
+            VStack(alignment: .leading) {
                 
-                Text(user.username)
-                    .font(.system(size: 14, weight: .semibold))
+                Text("\(user.username)")
+                    .font(.system(size: 15, weight: .semibold))
                 
                 Text(user.fullname)
                     .font(.system(size: 14))

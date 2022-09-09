@@ -37,7 +37,7 @@ struct SearchBar: View {
                 Text("Cancel")
                     .foregroundColor(.black)
             }
-            .padding(.trailing, 8)
+            .padding(.trailing, 10)
             .transition(.move(edge: .trailing))
             .animation(.default, value: 0)
         }

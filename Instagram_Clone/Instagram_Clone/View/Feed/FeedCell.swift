@@ -50,7 +50,7 @@ struct FeedCell: View {
             KFImage(URL(string: viewModel.post.imageURL))
                 .resizable()
                 .scaledToFill()
-                .frame(maxHeight: 390)
+                .frame(maxHeight: 440)
                 .clipped()
             
             HStack(spacing: 16) {
@@ -66,13 +66,17 @@ struct FeedCell: View {
                         .padding(3)
                 }
                 
-                Image(systemName: "bubble.right")
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(.black)
-                    .frame(width: 20, height: 20)
-                    .font(.system(size: 20))
-                    .padding(3)
+                if let post = viewModel.post {
+                    NavigationLink(destination: CommentView(post: post)) {
+                        Image(systemName: "bubble.right")
+                            .resizable()
+                            .scaledToFill()
+                            .foregroundColor(.black)
+                            .frame(width: 20, height: 20)
+                            .font(.system(size: 20))
+                            .padding(3)
+                    }
+                }
                 
                 Image(systemName: "paperplane")
                     .resizable()
@@ -98,7 +102,7 @@ struct FeedCell: View {
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
                 .padding(.leading, 8)
-                .padding(.top, -3)
+                .padding(.top, -2)
         }
     }
 }
