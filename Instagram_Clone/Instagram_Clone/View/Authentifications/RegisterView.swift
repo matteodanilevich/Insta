@@ -74,7 +74,7 @@ struct RegisterView: View {
                 }
                 
                 Button {
-                    if passwordIsValid == true && emailIsValid == true {
+                    if passwordIsValid && emailIsValid {
                         viewModel.register(withEmail: email, username: username, fullname: fullName, password: password)
                     }
                 } label: {
