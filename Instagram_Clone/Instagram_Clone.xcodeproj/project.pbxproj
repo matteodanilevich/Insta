@@ -52,6 +52,7 @@
 		A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53528AE775000FF2936 /* FeedCell.swift */; };
 		A26ED53928AF953000FF2936 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53828AF953000FF2936 /* PostGridView.swift */; };
 		A26ED53B28AF97B800FF2936 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ED53A28AF97B700FF2936 /* SearchBar.swift */; };
+		A2A64CC928CDDEF2009A8214 /* AuthentificationsView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A64CC828CDDEF2009A8214 /* AuthentificationsView+Extension.swift */; };
 		A2A6D51728AF9CC10065FA6D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */; };
 		A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51828AFBDDB0065FA6D /* UserListView.swift */; };
 		A2A6D51B28AFBE010065FA6D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6D51A28AFBE010065FA6D /* UserCell.swift */; };
@@ -116,6 +117,7 @@
 		A26ED53528AE775000FF2936 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		A26ED53828AF953000FF2936 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		A26ED53A28AF97B700FF2936 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A2A64CC828CDDEF2009A8214 /* AuthentificationsView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthentificationsView+Extension.swift"; sourceTree = "<group>"; };
 		A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		A2A6D51828AFBDDB0065FA6D /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		A2A6D51A28AFBE010065FA6D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				A2A6D51628AF9CC10065FA6D /* UIApplication+Extension.swift */,
 				A2A6D52228AFDEAF0065FA6D /* PostUploadView+Extension.swift */,
 				A2548BCF28B69B62003F567E /* ProfileHeaderView+Extension.swift */,
+				A2A64CC828CDDEF2009A8214 /* AuthentificationsView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				A26ED53628AE775000FF2936 /* FeedCell.swift in Sources */,
 				A2A6D52E28B237F60065FA6D /* SignInView.swift in Sources */,
 				A2A6D51928AFBDDB0065FA6D /* UserListView.swift in Sources */,
+				A2A64CC928CDDEF2009A8214 /* AuthentificationsView+Extension.swift in Sources */,
 				A2F7EE3628C6042700B8E9B2 /* CommentView.swift in Sources */,
 				A2548BD628B76B41003F567E /* UploadPostViewModel.swift in Sources */,
 			);
