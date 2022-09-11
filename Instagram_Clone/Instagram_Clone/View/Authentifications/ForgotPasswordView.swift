@@ -10,6 +10,7 @@ import SwiftUI
 struct ForgotPasswordView: View {
     
     @Binding var email: String
+    @State var emailIsValid: Bool = true
     
     init(email: Binding<String>) {
         self._email = email
@@ -24,11 +25,22 @@ struct ForgotPasswordView: View {
                     .scaledToFit()
                     .frame(width: 260, height: 200)
                     .foregroundColor(.black)
+                    .padding(.top, 75)
                 
                 VStack(spacing: -15) {
                     CustomTextField(text: $email, placeholder: Text("E-mail"), imageName: "envelope.circle")
                         .padding()
                         .padding(.horizontal, 32)
+                        .onChange(of: email) { newValue in
+                            if(newValue.range(of:"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", options: .regularExpression) != nil) {
+                                self.emailIsValid = true
+                                print("valid")
+                            } else {
+                                self.emailIsValid = false
+                                print("invalid")
+                            }
+                        }
+                        .foregroundColor(emailIsValid ? Color.black : Color.red)
                 }
                 
                 HStack {
@@ -67,7 +79,7 @@ struct ForgotPasswordView: View {
                             .font(.system(size: 14, weight: .semibold))
                         Text("Sign In")
                             .font(.system(size: 14))
-                    }
+                    }.padding(.bottom, 8)
                 }
             }
             .padding(.top, -110)
