@@ -10,7 +10,6 @@ import SwiftUI
 struct ForgotPasswordView: View {
     
     @Binding var email: String
-    @State var emailIsValid: Bool = true
     
     init(email: Binding<String>) {
         self._email = email
@@ -31,16 +30,7 @@ struct ForgotPasswordView: View {
                     CustomTextField(text: $email, placeholder: Text("E-mail"), imageName: "envelope.circle")
                         .padding()
                         .padding(.horizontal, 32)
-                        .onChange(of: email) { newValue in
-                            if(newValue.range(of:"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", options: .regularExpression) != nil) {
-                                self.emailIsValid = true
-                                print("valid")
-                            } else {
-                                self.emailIsValid = false
-                                print("invalid")
-                            }
-                        }
-                        .foregroundColor(emailIsValid ? Color.black : Color.red)
+                        .foregroundColor(isValidEmail(email) ? Color.black : Color.red)
                 }
                 
                 HStack {

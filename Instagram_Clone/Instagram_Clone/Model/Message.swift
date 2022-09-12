@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
+//MARK: Message struct
 struct Message: Identifiable, Decodable, Hashable {
     
     @DocumentID var id: String?

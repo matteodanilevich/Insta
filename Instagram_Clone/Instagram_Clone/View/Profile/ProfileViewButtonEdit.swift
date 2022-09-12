@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ProfileViewButtonEdit: View {
     
-    @ObservedObject var viewModel: ProfileViewModel
     @State var showProfileEdit = false
+    
+    @ObservedObject var viewModel: ProfileViewModel
     
     var didFollowUser: Bool {
         return viewModel.user.didFollowUser ?? false

@@ -11,8 +11,6 @@ struct SignInView: View {
     
     @State var email = ""
     @State var password = ""
-//    @State var emailIsValid: Bool = true
-//    @State var passwordIsValid: Bool = true
     
     @EnvironmentObject var viewModel: AuthentificationViewModel
     
@@ -31,31 +29,11 @@ struct SignInView: View {
                     CustomTextField(text: $email, placeholder: Text("E-mail"), imageName: "envelope.circle")
                         .padding()
                         .padding(.horizontal, 32)
-//                        .onChange(of: email) { newValue in
-//                            if(newValue.range(of:"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", options: .regularExpression) != nil) {
-//                                self.emailIsValid = true
-//                                print("valid")
-//                            } else {
-//                                self.emailIsValid = false
-//                                print("invalid")
-//                            }
-//                        }
-//                        .foregroundColor(emailIsValid ? Color.black : Color.red)
                         .foregroundColor(isValidEmail(email) ? Color.black : Color.red)
                     
                     CustomSecureTextField(text: $password, placeholder: Text("Password"), imageName: "lock.circle")
                         .padding()
                         .padding(.horizontal, 32)
-//                        .onChange(of: password) { newValue in
-//                            if(newValue.range(of:"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&#])[A-Za-z\\d$@$!%*?&#]{6,10}$", options: .regularExpression) != nil) {
-//                                self.passwordIsValid = true
-//                                print("valid")
-//                            } else {
-//                                self.passwordIsValid = false
-//                                print("invalid")
-//                            }
-//                        }
-//                        .foregroundColor(passwordIsValid ? Color.black : Color.red)
                         .foregroundColor(isPasswordValid(password) ? Color.black : Color.red)
                 }
                 

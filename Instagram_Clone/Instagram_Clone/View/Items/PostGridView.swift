@@ -13,6 +13,7 @@ struct PostGridView: View {
     private let items = [GridItem(), GridItem(), GridItem()]
     private let frameSize = UIScreen.main.bounds.width / 3
     let type: PostGridType
+    
     @ObservedObject var viewModel: GridViewModel
     
     init(type: PostGridType) {

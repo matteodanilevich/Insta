@@ -17,6 +17,7 @@ class ProfileEditViewModel: ObservableObject {
         self.user = user
     }
     
+    //MARK: Biography save
     func biographySave(bio: String) {
         
         guard let userID = user.id else { return }

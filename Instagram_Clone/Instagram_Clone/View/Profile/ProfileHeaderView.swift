@@ -13,6 +13,7 @@ struct ProfileHeaderView: View {
     @State var selectedImage: UIImage?
     @State var userImage: Image? = Image("placeholder_image")
     @State var imagePickerRepresent = false
+    
     @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
@@ -72,7 +73,6 @@ struct ProfileHeaderView: View {
                     .padding(.leading)
                     .padding(.top, 1)
             }
-            
             
             HStack {
                 Spacer()

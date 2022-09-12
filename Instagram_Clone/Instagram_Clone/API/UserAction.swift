@@ -10,6 +10,7 @@ import Firebase
 
 struct UserAction {
     
+    //MARK: Follow User
     static func followUser(uid: String, completion: ((Error?) -> Void)?) {
         
         guard let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
@@ -24,6 +25,7 @@ struct UserAction {
         }
     }
     
+    //MARK: Unfollow User
     static func unfollowUser(uid: String, completion: ((Error?) -> Void)?) {
         
         guard let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }
@@ -38,6 +40,7 @@ struct UserAction {
         }
     }
     
+    //MARK: Check follow
     static func checkFollowing(userID: String, completion: @escaping(Bool) -> Void) {
         
         guard let currentUID = AuthentificationViewModel.shared.userSession?.uid else { return }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 extension ProfileHeaderView {
+    
+    //MARK: Image load
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         

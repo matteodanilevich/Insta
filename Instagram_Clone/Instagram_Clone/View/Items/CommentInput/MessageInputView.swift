@@ -34,9 +34,3 @@ struct MessageInputView: View {
         .padding()
     }
 }
-
-//struct MessageInputView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageInputView()
-//    }
-//}

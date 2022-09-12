@@ -15,7 +15,6 @@ class FeedCellViewModel: ObservableObject {
     var timestamp: String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.second, .minute, .hour, .day]
-//        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
         formatter.maximumUnitCount = 1
         formatter.unitsStyle = .abbreviated
         return formatter.string(from: post.timestamp.dateValue(), to: Date()) ?? ""
@@ -32,6 +31,7 @@ class FeedCellViewModel: ObservableObject {
         checkingPostLikes()
     }
     
+    //MARK: User fetch
     func userFetching() {
         Firestore.firestore().collection("users").document(post.ownerUID).getDocument { snapshot, error in
             if let error = error {
@@ -46,6 +46,7 @@ class FeedCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: Post like
     func likePost() {
         guard let postUID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
         
@@ -76,6 +77,7 @@ class FeedCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: Post likes check
     func checkingPostLikes() {
         guard let postID = post.id, let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
         
@@ -91,6 +93,7 @@ class FeedCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: Unlike posts
     func unlikePost() {
         
         guard post.likes > 0 else { return }

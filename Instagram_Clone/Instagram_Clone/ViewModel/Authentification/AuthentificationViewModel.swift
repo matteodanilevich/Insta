@@ -20,7 +20,9 @@ class AuthentificationViewModel: ObservableObject {
         userFetch()
     }
     
+    //MARK: Register user
     func register(withEmail email: String, username: String, fullname: String, password: String) {
+        
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -42,13 +44,13 @@ class AuthentificationViewModel: ObservableObject {
                 
                 self.userSession = user
                 userFetch()
-                
-                print("User created")
             }
         }
     }
     
+    //MARK: Sign in
     func signIn(withEmail email: String, password: String) {
+        
         Auth.auth().signIn(withEmail: email, password: password) { [self] result, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -62,11 +64,14 @@ class AuthentificationViewModel: ObservableObject {
         }
     }
     
+    //MARK: Log out
     func logOut() {
+        
         self.userSession = nil
         try? Auth.auth().signOut()
     }
     
+    //MARK: User Fetch
     func userFetch() {
         
         guard let uid = userSession?.uid else { return }

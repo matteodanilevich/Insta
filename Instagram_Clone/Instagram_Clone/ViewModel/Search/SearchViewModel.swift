@@ -16,6 +16,7 @@ class SearchViewModel: ObservableObject {
         fetchUsers()
     }
     
+    //MARK: User fetch
     func fetchUsers() {
         Firestore.firestore().collection("users").getDocuments { snapshot, error in
             if let error = error {
@@ -26,10 +27,10 @@ class SearchViewModel: ObservableObject {
             guard let documents = snapshot?.documents else { return }
             
             self.users = documents.compactMap({ try? $0.data(as: User.self) })
-            print(self.users)
         }
     }
     
+    //MARK: User filter
     func filterUsers(withText input: String) -> [User] {
         let lowercasedInput = input.lowercased()
         
