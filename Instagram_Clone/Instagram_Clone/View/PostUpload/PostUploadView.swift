@@ -13,6 +13,7 @@ struct PostUploadView: View {
     @State var postedImage: Image?
     @State var imagePickerRepresented = false
     @State var captionText = ""
+    
     @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
@@ -55,10 +56,8 @@ struct PostUploadView: View {
                         .font(.system(size: 16, weight: .semibold))
                         .frame(width: 350, height: 40)
                         .background(Color.blue)
-//                        .cornerRadius(6)
                         .clipShape(Capsule())
                         .foregroundColor(.white)
-                    
                 }
                 
                 Spacer()

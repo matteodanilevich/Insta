@@ -46,9 +46,3 @@ struct CommentCellView: View {
         .padding(.horizontal)
     }
 }
-
-//struct CommentCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentCellView()
-//    }
-//}

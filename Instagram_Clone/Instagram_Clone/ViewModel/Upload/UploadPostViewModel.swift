@@ -11,6 +11,7 @@ import FirebaseStorage
 
 class UploadPostViewModel: ObservableObject {
     
+    //MARK: Posts upload
     func uploadPosts(image: UIImage, caption: String) {
         
         guard let user = AuthentificationViewModel.shared.currentUser else { return }
@@ -24,6 +25,7 @@ class UploadPostViewModel: ObservableObject {
                         "imageURL": imageURL,
                         "ownerUID": uid,
                         "ownerUsername": user.username] as [String : Any]
+            
             Firestore.firestore().collection("posts").addDocument(data: data) { error in
                 if let error = error {
                     print(error.localizedDescription)

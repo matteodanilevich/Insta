@@ -78,9 +78,3 @@ struct MessageRowView: View {
         .padding(6)
     }
 }
-
-//struct MessageRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageRowView()
-//    }
-//}

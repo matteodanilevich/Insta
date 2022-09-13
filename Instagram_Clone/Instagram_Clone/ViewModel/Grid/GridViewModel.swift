@@ -16,6 +16,7 @@ enum PostGridType {
 class GridViewModel: ObservableObject {
     
     @Published var posts = [Post]()
+    
     let type: PostGridType
     
     init(type: PostGridType) {
@@ -23,6 +24,7 @@ class GridViewModel: ObservableObject {
         postFetching()
     }
     
+    //MARK: Post fetch
     func postFetching() {
         switch type {
         case .search:
@@ -32,6 +34,7 @@ class GridViewModel: ObservableObject {
         }
     }
     
+    //MARK: Search view post fetch
     func searchViewPostFetching() {
         Firestore.firestore().collection("posts").getDocuments { snapshot, error in
             if let error = error {
@@ -45,6 +48,7 @@ class GridViewModel: ObservableObject {
         }
     }
     
+    //MARK: Profile view post fetch
     func profileViewPostFetching(withUID uid: String) {
         Firestore.firestore().collection("posts").whereField("ownerUID", isEqualTo: uid).getDocuments { snapshot, error in
             if let error = error {

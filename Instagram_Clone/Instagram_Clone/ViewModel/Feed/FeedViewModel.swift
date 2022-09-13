@@ -17,6 +17,7 @@ class FeedViewModel: ObservableObject {
         fetchPosts()
     }
     
+    //MARK: Posts fetch
     func fetchPosts() {
         
         Firestore.firestore().collection("posts").order(by: "timestamp", descending: true).getDocuments { snapshot, error in

@@ -27,6 +27,7 @@ class NotificationCellViewModel: ObservableObject {
         return formatter.string(from: notification.timestamp.dateValue(), to: Date()) ?? ""
     }
     
+    //MARK: User fetch
     func userFetch() {
         Firestore.firestore().collection("users").document(notification.uid).getDocument { snapshot, error in
             if let error = error {
@@ -38,6 +39,7 @@ class NotificationCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: Post fetch
     func postFetch() {
         guard let postID = notification.postID else {return }
         
@@ -51,6 +53,7 @@ class NotificationCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: User follow
     func followUser() {
         
         UserAction.followUser(uid: notification.uid) { error in
@@ -65,6 +68,7 @@ class NotificationCellViewModel: ObservableObject {
         }
     }
     
+    //MARK: User unfollow
     func unfollowUser() {
         
         UserAction.unfollowUser(uid: notification.uid) { error in
@@ -77,6 +81,7 @@ class NotificationCellViewModel: ObservableObject {
         self.notification.didFollowUser = false
     }
     
+    //MARK: Check following status
     func checkFollowing() {
         
         guard notification.type == .follow else { return }

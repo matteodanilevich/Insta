@@ -81,9 +81,3 @@ struct ActivityCell: View {
         .padding(.horizontal)
     }
 }
-
-//struct ActivityCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ActivityCell()
-//    }
-//}

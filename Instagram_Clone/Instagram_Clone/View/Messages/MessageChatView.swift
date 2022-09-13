@@ -37,7 +37,6 @@ struct MessageChatView: View {
                     }
                 }
             }
-            
             MessageInputView(message: $message, action: messageSend)
         }
     }
@@ -48,9 +47,3 @@ struct MessageChatView: View {
         print("Message send")
     }
 }
-
-//struct MessageChatView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageChatView()
-//    }
-//}

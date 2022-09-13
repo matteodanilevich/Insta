@@ -19,6 +19,7 @@ class ProfileViewModel: ObservableObject {
         checkStats()
     }
 
+    //MARK: New image load
     func loadNewProfileImage(image: UIImage, completion: @escaping(String) -> Void) {
         
         guard let uid = user.id else { return }
@@ -35,6 +36,7 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    //MARK: Follow user
     func followUser() {
         
         guard let userID = user.id else { return }
@@ -51,6 +53,7 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    //MARK: Unfollow User
     func unfollowUser() {
         
         guard let userID = user.id else { return }
@@ -65,6 +68,7 @@ class ProfileViewModel: ObservableObject {
         self.user.didFollowUser = false
     }
     
+    //MARK: Follow check
     func checkFollowing() {
         
         guard let userID = user.id, !user.isCurrentUser else { return }
@@ -74,6 +78,7 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    //MARK: User stats check 
     func checkStats() {
         
         guard let userID = user.id else { return }

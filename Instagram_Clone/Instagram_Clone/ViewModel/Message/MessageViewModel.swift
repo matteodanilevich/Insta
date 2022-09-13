@@ -18,11 +18,12 @@ class MessageViewModel: ObservableObject {
         messageFetch(withUid: currentUserID)
     }
     
+    //MARK: Message send function
     func messageSend(message: String) {
         
         guard let user = AuthentificationViewModel.shared.currentUser, let userID = AuthentificationViewModel.shared.userSession?.uid, let receiverID = user.id else { return }
         
-        var data: [String: Any] = ["uid": userID,
+        let data: [String: Any] = ["uid": userID,
                                    "receiverID": receiverID,
                                    "profileImageURL": user.profileImageURL,
                                    "message": message,
@@ -43,6 +44,7 @@ class MessageViewModel: ObservableObject {
         }
     }
     
+    //MARK: Message fetch
     func messageFetch(withUid currentUserProfileID: String) {
         
         guard let currentUserID = AuthentificationViewModel.shared.userSession?.uid else { return }

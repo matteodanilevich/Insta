@@ -34,9 +34,3 @@ struct CommentView: View {
         comment = ""
     }
 }
-//
-//struct CommentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentView()
-//    }
-//}

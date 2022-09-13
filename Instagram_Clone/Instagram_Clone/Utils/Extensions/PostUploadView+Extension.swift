@@ -8,6 +8,8 @@
 import SwiftUI
 
 extension PostUploadView {
+    
+    //MARK: Image Load
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         postedImage = Image(uiImage: selectedImage)

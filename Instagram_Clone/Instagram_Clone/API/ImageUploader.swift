@@ -10,10 +10,12 @@ import Firebase
 import FirebaseStorage
 
 enum UploadedType {
+    
     case profile
     case post
     
     var filePath: StorageReference {
+        
         let fileName = NSUUID().uuidString
         switch self {
         case .profile:
@@ -24,6 +26,7 @@ enum UploadedType {
     }
 }
 
+//MARK: ImageUploader
 struct ImageUploader {
 
     static func imageUpload(image: UIImage, type: UploadedType, completion: @escaping(String) -> Void) {

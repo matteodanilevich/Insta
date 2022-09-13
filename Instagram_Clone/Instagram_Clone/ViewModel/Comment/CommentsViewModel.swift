@@ -18,11 +18,12 @@ class CommentsViewModel: ObservableObject {
         commentFetch()
     }
     
+    //MARK: Comment upload
     func commentUpload(comment: String) {
         
         guard let postID = post.id, let user = AuthentificationViewModel.shared.currentUser, let userID = user.id else { return }
         
-        var data: [String: Any] = ["uid": userID,
+        let data: [String: Any] = ["uid": userID,
                                   "postOwnerId": post.ownerUID,
                                   "username": user.username,
                                   "profileImageURL": user.profileImageURL,
@@ -39,11 +40,12 @@ class CommentsViewModel: ObservableObject {
         }
     }
     
+    //MARK: Comment fetch
     func commentFetch() {
         
         guard let postID = post.id else { return }
         
-        //Изменение сортировки 
+        //Sort change
         Firestore.firestore().collection("posts").document(postID).collection("post_comments").order(by: "timestamp", descending: false).addSnapshotListener { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -51,8 +53,6 @@ class CommentsViewModel: ObservableObject {
             }
             
             guard let documentChange = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
-            
-//            print(documentChange.compactMap({ try? $0.document.data(as: Comment.self)}))
             
             self.comments.append(contentsOf: documentChange.compactMap({ try? $0.document.data(as: Comment.self) }))
         }

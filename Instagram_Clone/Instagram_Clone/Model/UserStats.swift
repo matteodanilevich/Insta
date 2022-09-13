@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: UserStats Struct
 struct UserStats: Decodable {
     
     var following: Int

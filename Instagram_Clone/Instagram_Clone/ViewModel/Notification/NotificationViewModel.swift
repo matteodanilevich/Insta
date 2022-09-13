@@ -16,6 +16,7 @@ class NotificationViewModel: ObservableObject {
         notificationFetch()
     }
     
+    //MARK: Notification fetch
     func notificationFetch() {
         
         guard let userID = AuthentificationViewModel.shared.userSession?.uid else { return }
@@ -32,6 +33,7 @@ class NotificationViewModel: ObservableObject {
         }
     }
 
+    //MARK: Notification send
     static func sendNotification(withUID uid: String, type: NotificationType, post: Post? = nil) {
 
         guard let user = AuthentificationViewModel.shared.currentUser, let userID = user.id else { return }
